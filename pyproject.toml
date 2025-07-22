@@ -1,0 +1,33 @@
+[tool.setuptools]
+py-modules = ["etl", "subflows"]
+
+[project]
+name = "prefect-oop-example"
+dynamic = ["version"]
+description = "Describe your Prefect pipeline"
+authors = [{ name = "Your Name", email = "your@email.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "docker==7.1.0",
+    "loguru==0.7.3",
+    "pandas==2.3.0",
+    "prefect==3.4.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.4.1",
+    "pytest-cov==6.2.1",
+    "pytest-mock==3.14.1",
+    "ruff"
+]
+
+[tool.pytest.ini_options]
+pythonpath = "."
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
