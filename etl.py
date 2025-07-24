@@ -15,7 +15,7 @@ logger.add(log_filename, format="{time} {level} {message}", rotation="1 day")
 @flow(name="main-flow")
 def main():
     extract = Extraction("config.yaml")
-    state = extract.run() # type: ignore
+    state = extract.run()  # type: ignore
 
     if not state.continue_run:
         return Completed(name="Skipped", message=state.message)
@@ -23,7 +23,7 @@ def main():
     logger.info("Extraction successfully completed!")
 
     transform = Transform("config.yaml", state.df)
-    state = transform.run() # type: ignore
+    state = transform.run()  # type: ignore
 
     if not state.continue_run:
         return Completed(name="Skipped", message=state.message)
@@ -31,7 +31,7 @@ def main():
     logger.info("Transformation successfully completed!")
 
     load = Loading("config.yaml", state.df)
-    state = load.run() # type: ignore
+    state = load.run()  # type: ignore
 
     if not state.continue_run:
         return Completed(name="Skipped", message=state.message)
