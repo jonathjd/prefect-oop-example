@@ -8,7 +8,7 @@ This repository is a template demonstrating how to package a Prefect 3 workflow 
 
 **Modern Logging**: Uses `loguru` for modern logging.
 
-**Fast Formatting⚡️**: Uses ruff for formating and linting.
+**Fast Formatting⚡️**: Uses `ruff` for formating and linting.
 
 **Containerized**: A Dockerfile that packages the Prefect flow into an image.
 
