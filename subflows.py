@@ -14,15 +14,15 @@ class CompletedSubflow:
     message: str | None = None
 
 
+def parse_config(config: str | Path):
+    with open("config.yaml", "r") as f:
+        config = yaml.safe_load(f)
+    return config
+
+
 class Extraction:
     def __init__(self, config: Path | str):
-        self.config = self.parse_config(config)
-
-    @staticmethod
-    def parse_config(config):
-        with open("config.yaml", "r") as f:
-            config = yaml.safe_load(f)
-        return config
+        self.config = parse_config(config)
 
     @task
     def do_some_fetching(self):
@@ -38,7 +38,7 @@ class Extraction:
 
 class Transform(Extraction):
     def __init__(self, config: Path | str, df: pd.DataFrame):
-        self.config = self.parse_config(config)
+        self.config = parse_config(config)
 
         # save df
         self.df = df
@@ -57,7 +57,7 @@ class Transform(Extraction):
 
 class Loading(Extraction):
     def __init__(self, config: Path | str, df: pd.DataFrame):
-        self.config = self.parse_config(config)
+        self.config = parse_config(config)
 
         # save df
         self.df = df
