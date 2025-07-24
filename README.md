@@ -1,5 +1,5 @@
 # Prefect 3 pipeline example with uv, and Docker
-This repository is a template demonstrating how to package a Prefect 3 workflow into a Docker container using uv for rapid dependency management. It also uses an OOP based approach to creating flows.
+This repository is a template demonstrating how to package a Prefect 3 workflow into a Docker container using `uv` for rapid dependency management. It also uses an OOP based approach to creating flows.
 
 # ✨ Features
 **OOP Design**: Uses an OOP design for logic instead of strictly procedure code.
