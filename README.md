@@ -2,9 +2,13 @@
 This repository is a template demonstrating how to package a Prefect 3 workflow into a Docker container using `uv` for rapid dependency management. It also uses an OOP based approach to creating flows.
 
 # ✨ Features
-**OOP Design**: Uses an OOP design for logic instead of strictly procedure code.
+**OOP Design**: Uses an OOP design for logic instead of strictly procedural code.
 
 **Fast Builds**: Uses `uv` and a `pyproject.toml` file to install Python dependencies quickly.
+
+**Modern Logging**: Uses `loguru` for modern logging.
+
+**Fast Formatting⚡️**: Uses ruff for formating and linting.
 
 **Containerized**: A Dockerfile that packages the Prefect flow into an image.
 
