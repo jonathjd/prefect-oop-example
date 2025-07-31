@@ -36,7 +36,7 @@ class Extraction:
         return CompletedSubflow(continue_run=True, df=pd.DataFrame())
 
 
-class Transform(Extraction):
+class Transform:
     def __init__(self, config: Path | str, df: pd.DataFrame):
         self.config = parse_config(config)
 
@@ -55,7 +55,7 @@ class Transform(Extraction):
         return CompletedSubflow(continue_run=True, df=pd.DataFrame())
 
 
-class Loading(Extraction):
+class Loading:
     def __init__(self, config: Path | str, df: pd.DataFrame):
         self.config = parse_config(config)
 
